@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @pagy, @links = pagy(@user.links.order(id: :desc))
+    @pagy, @links = pagy(@user.links.order(id: :desc), items: 4)
     counts(@user)
   end
 
