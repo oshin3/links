@@ -5,18 +5,18 @@ class LinksController < ApplicationController
   def create
     @link = current_user.links.build(link_params)
     if @link.save
-      flash[:success] = 'メッセージを投稿しました。'
+      flash[:success] = 'リンクを投稿しました。'
       redirect_to root_url
     else
       @pagy, @links = pagy(current_user.feed_links.order(id: :desc))
-      flash.now[:danger] = 'メッセージの投稿に失敗しました。'
+      flash.now[:danger] = 'リンクの投稿に失敗しました。'
       render 'toppages/index'
     end
   end
 
   def destroy
     @link.destroy
-    flash[:success] = 'メッセージを削除しました。'
+    flash[:success] = 'リンクを削除しました。'
     redirect_back(fallback_location: root_path)
   end
 

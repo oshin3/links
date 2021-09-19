@@ -8,7 +8,9 @@
             <%= link_to link.user.name, user_path(link.user), class: "text-decoration-none" %> <span class="text-muted">posted at <%= link.created_at %></span>
           </div>
           <div>
-            <p><%= link.content %></p>
+            <div class="d-grid gap-2">
+              <button class="btn btn-outline-success" type="button" onClick="window.open('<%= link.content %>')"><%= link.content %></button>
+            </div>
           </div>
           <div>
             <% if current_user == link.user %>

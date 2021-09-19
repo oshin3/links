@@ -28,7 +28,7 @@ class User < ApplicationRecord
   end
   
   def feed_links
-    Link.where(user_id: self.following_ids + [self.id])
+    Link.where(user_id: [self.id])
   end
   
 end
