@@ -8,7 +8,7 @@ class LinksController < ApplicationController
       flash[:success] = 'メッセージを投稿しました。'
       redirect_to root_url
     else
-      @pagy, @links = pagy(current_user.links.order(id: :desc))
+      @pagy, @links = pagy(current_user.feed_links.order(id: :desc))
       flash.now[:danger] = 'メッセージの投稿に失敗しました。'
       render 'toppages/index'
     end
