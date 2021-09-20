@@ -10,4 +10,8 @@
       <%= f.submit 'Follow', class: 'btn btn-primary w-100' %>
     <% end %>
   <% end %>
+<% else %>
+  <div class="d-grid gap-2">
+    <button class="btn btn-primary" type="button" onclick="location.href='/'">リンク一覧を編集する</button>
+  </div>
 <% end %>

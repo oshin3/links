@@ -3,7 +3,14 @@
     <aside class="col-sm-4">
       <%= form_with(model: @link) do |f| %>
         <div class="mb-3">
-          <%= f.url_field :content, class: 'form-control', rows: 5 %>
+          <p>
+            リンクタイトル
+            <%= f.text_field :title, class: 'form-control', rows: 5 %>
+          </p>
+          <p>
+            URL
+            <%= f.url_field :content, class: 'form-control', rows: 5 %>
+          </p>
         </div>
         <%= f.submit 'Post', class: 'btn btn-primary w-100' %>
       <% end %>
