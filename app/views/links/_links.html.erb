@@ -1,15 +1,11 @@
 <% if links.any? %>
   <ul class="list-unstyled mt-2">
     <% links.each do |link| %>
-      <li class="d-flex">
-        <img class="rounded me-2 mb-5" src="<%= gravatar_url(link.user, { size: 64 }) %>" alt="">
+      <li class="d-inline">
         <div>
           <div>
-            <%= link_to link.user.name, user_path(link.user), class: "text-decoration-none" %> <span class="text-muted">posted at <%= link.created_at %></span>
-          </div>
-          <div>
             <div class="d-grid gap-2">
-              <button class="btn btn-outline-success" type="button" onClick="window.open('<%= link.content %>')"><%= link.content %></button>
+              <button class="btn btn-outline-success btn-lg" type="button" onClick="window.open('<%= link.content %>')"><%= link.content %></button>
             </div>
           </div>
           <div>
@@ -18,7 +14,7 @@
             <% end %>
           </div>
         </div>
-      </li>
+      <br></li>
     <% end %>
   </ul>
   <%== pagy_bootstrap_nav(@pagy) %>
